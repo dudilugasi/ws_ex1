@@ -27,10 +27,10 @@ exports.getTextBookByISBN = function(isbn) {
 
 exports.getTextBookByPublisher = function(publisher) {
     var i;
-    var books = [];
+    var books = {'books':[]};
     for (i = 0; i < textbooks.textbooks.length ; i++){
         if (textbooks.textbooks[i].publisher === publisher) {
-            books.push(textbooks.textbooks[i]);
+            books.books.push(textbooks.textbooks[i]);
         }
     }
     return books;

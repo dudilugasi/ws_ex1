@@ -9,18 +9,20 @@ var textbooks = require("./textbooks");
 var app = express();
 app.set('json spaces',4);
 
-app.get('/getbooks',function(req,res) {
+app.get('/books',function(req,res) {
    res.json(textbooks.getAllTextBooks());
 });
 
-app.get('/getbookbyisbn/:isbn',function(req,res){
+app.get('/isbn/:isbn',function(req,res){
     res.json(textbooks.getTextBookByISBN(req.params.isbn));
 });
 
-app.get('/getbooksbypublisher/:publisher',function(req,res){
+app.get('/publisher/:publisher',function(req,res){
     res.json(textbooks.getTextBookByPublisher(req.params.publisher));
 });
 
-console.log();
+app.use(function(req,res){
+    res.send(404,"the page you requested is not here!");
+});
 
 app.listen(3000);
