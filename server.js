@@ -11,17 +11,22 @@ app.set('json spaces',4);
 
 //if the route is '/textbooks' the server returns json object with all the textbooks
 app.get('/textbooks',function(req,res) {
-   res.json(textbooks.getAllTextBooks());
+    console.log('getting all textbooks');
+    res.json(textbooks.getAllTextBooks());
 });
 
 
-//if the route is '/isbn/:isbn' the server returns json object with the textbook of that ISBN
+//if the route is '/isbn/:isbn'
+//the server returns json object with the textbook of that ISBN
 app.get('/isbn/:isbn',function(req,res){
+    console.log('getting book with ISBN: ' + req.params.isbn);
     res.json(textbooks.getTextBookByISBN(req.params.isbn));
 });
 
-//if the route is '/publisher/:publisher' the server returns json object with all the textbook of that publisher
+//if the route is '/publisher/:publisher'
+// the server returns json object with all the textbook of that publisher
 app.get('/publisher/:publisher',function(req,res){
+    console.log('getting books with publisher: ' + req.params.publisher);
     res.json(textbooks.getTextBookByPublisher(req.params.publisher));
 });
 
@@ -29,3 +34,5 @@ app.get('/publisher/:publisher',function(req,res){
 
 
 app.listen(3000);
+
+console.log('server is listening on port 3000');
