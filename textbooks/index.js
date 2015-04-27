@@ -16,7 +16,7 @@ var books = {"textbooks" : [
 //functions that returns all of textbooks objects
 exports.getAllTextBooks = function() {
     console.log('textbooks: ' + JSON.stringify(books.textbooks));
-    return books.textbooks;
+    return {"textbooks" : books.textbooks};
 };
 
 //function that relieve ISBN as parameter and returns a textbook that have that ISBN
@@ -25,7 +25,7 @@ exports.getTextBookByISBN = function(isbn) {
     for (i = 0; i < books.textbooks.length ; i++){
         if (books.textbooks[i].ISBN === isbn) {
             console.log('found book: ' + JSON.stringify(books.textbooks[i]));
-            return books.textbooks[i];
+            return {"textbooks" : books.textbooks[i]};
         }
     }
     console.log('no book matches the ISBN: ' + isbn);
