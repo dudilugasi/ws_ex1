@@ -31,7 +31,6 @@ app.get('/publisher/:publisher',function(req,res){
 
 //if the route is any other the return will be 404 not found error
 
-var port = Number(process.env.Port || 3000);
-app.listen(port);
+app.listen(process.env.PORT || 5000);
 
-console.log('server is listening on port 3000');
+console.log('server is listening on port ' + port);
