@@ -32,7 +32,7 @@ exports.getTextBookByISBN = function(isbn) {
     return {};
 };
 
-//function that relieve publisher as parameter and returns textbooks that have that publisher
+//function that relieve publisher as parameter and returns textbooks that have that same publisher
 exports.getTextBookByPublisher = function(publisher) {
     var i;
     var booksObj = {'books':[]};
