@@ -3,7 +3,6 @@
  */
 
 var express = require('express');
-var url = require('url');
 var textbooks = require("./textbooks");
 
 var app = express();
@@ -32,7 +31,7 @@ app.get('/publisher/:publisher',function(req,res){
 
 //if the route is any other the return will be 404 not found error
 
-
-app.listen(3000);
+var port = Number(process.env.Port || 3000);
+app.listen(port);
 
 console.log('server is listening on port 3000');
