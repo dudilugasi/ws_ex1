@@ -7,6 +7,13 @@ var textbooks = require("./textbooks");
 
 var app = express();
 app.set('json spaces',4);
+app.set('views','./views');
+app.set('view engine','ejs');
+app.use(express.static(__dirname + '/public'));
+
+app.get('/api',function(req,res){
+   res.render('api');
+});
 
 //if the route is '/textbooks' the server returns json object with all the textbooks
 app.get('/textbooks',function(req,res) {

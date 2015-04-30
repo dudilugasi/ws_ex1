@@ -1,0 +1,37 @@
+* {
+    margin : 0 ;
+    padding : 0;
+}
+header , footer , nav , main , section , article , aside {
+    display : block ;
+}
+
+main {
+    width: 1000px;
+    padding: 30px 0 50px 30px;
+    font: 400 14px "Open Sans",sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: normal;
+    border-bottom: solid #F7F7F7 1px;
+}
+
+h2  {
+    padding-top: 30px;
+}
+p{
+    margin: 10px 0;
+    line-height: 1.35em;
+}
+
+pre {
+    background-color: #F7F7F7;
+    padding: 1em;
+    margin: .5em 0;
+    line-height: 1.5;
+    font-size: 14px;
+    border-radius: 3px;
+}

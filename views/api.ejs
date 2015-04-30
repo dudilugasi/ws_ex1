@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/style.css" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+<main>
+    <h1>Book Store Web Service API</h1>
+    <p> this web application created to give numerous ways to retrieve text books from our inventory. </p>
+    <p> the books are returned in JSON objects containing an array of text books </p>
+    <p>all the requests should be in GET method</p>
+    <p>example of JSON object with one book:</p>
+    <pre><code>{
+"textbooks" : [
+        {
+            "ISBN":"1118008189",
+            "name":"HTML and CSS: Design and Build Websites",
+            "author":"Jon Duckett",
+            "publisher":"Wiley",
+            "year":2011
+        }
+    ]
+}</code></pre>
+    <h2>Obtaining all Text Books</h2>
+    <p>in order to obtain every text books one needs to add the following link:</p>
+    <pre><code>https://ws-ex1-dudi.herokuapp.com/textbooks</code></pre>
+    <p>the result will be an JSON object containing an "textbooks" key and an array with all the text books objects.</p>
+
+    <h2>Obtaining one Text Book by ISBN</h2>
+    <p>in order to obtain a textbook bt a certain ISBN one need to add the following link:</p>
+    <pre><code>https://ws-ex1-dudi.herokuapp.com/isbn/:isbn</code></pre>
+    <p>where ":isbn" should be the ISBN of the book</p>
+    <p>the result will be an JSON object containing an "textbooks" key and an array with the text book with that ISBN</p>
+    <p>if the book was not found the result will be an empty array</p>
+
+    <h2>Obtaining all text books by the same publisher</h2>
+    <p>in order to obtain textbooks by a certain publisher one need to add the following link:</p>
+    <pre><code>https://ws-ex1-dudi.herokuapp.com/publisher/:publisher</code></pre>
+    <p>where ":publisher" should be the publisher of the books</p>
+    <p>the result will be an JSON object containing an "textbooks" key and an array with the text books with that publisher</p>
+    <p>if there were no books by that publisher the result will be an empty array</p>
+</main>
+</body>
+</html>
