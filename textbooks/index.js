@@ -39,7 +39,7 @@ exports.getTextBookByPublisher = function(publisher) {
     for (i = 0; i < books.textbooks.length ; i++){
         if (books.textbooks[i].publisher === publisher) {
             console.log('found book: ' + JSON.stringify(books.textbooks[i]));
-            booksObj.books.push(books.textbooks[i]);
+            booksObj.textbooks.push(books.textbooks[i]);
         }
     }
     return booksObj;
