@@ -35,7 +35,7 @@ exports.getTextBookByISBN = function(isbn) {
 //function that relieve publisher as parameter and returns textbooks that have that same publisher
 exports.getTextBookByPublisher = function(publisher) {
     var i;
-    var booksObj = {'books':[]};
+    var booksObj = {'textbooks':[]};
     for (i = 0; i < books.textbooks.length ; i++){
         if (books.textbooks[i].publisher === publisher) {
             console.log('found book: ' + JSON.stringify(books.textbooks[i]));
