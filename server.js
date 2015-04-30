@@ -18,7 +18,6 @@ app.get('/api',function(req,res){
 //if the route is '/textbooks' the server returns json object with all the textbooks
 app.get('/textbooks',function(req,res) {
     console.log('getting all textbooks');
-    res.append("Access-Control-Allow-Origin", "*")
     res.json(textbooks.getAllTextBooks());
 });
 
