@@ -18,7 +18,7 @@ app.get('/api',function(req,res){
 //if the route is '/textbooks' the server returns json object with all the textbooks
 app.get('/textbooks',function(req,res) {
     console.log('getting all textbooks');
-    res.json(textbooks.getAllTextBooks());
+    res.json(200,textbooks.getAllTextBooks());
 });
 
 
@@ -26,14 +26,14 @@ app.get('/textbooks',function(req,res) {
 //the server returns json object with the textbook of that ISBN
 app.get('/isbn/:isbn',function(req,res){
     console.log('getting book with ISBN: ' + req.params.isbn);
-    res.json(textbooks.getTextBookByISBN(req.params.isbn));
+    res.json(200,textbooks.getTextBookByISBN(req.params.isbn));
 });
 
 //if the route is '/publisher/:publisher'
 // the server returns json object with all the textbook of that publisher
 app.get('/publisher/:publisher',function(req,res){
     console.log('getting books with publisher: ' + req.params.publisher);
-    res.json(textbooks.getTextBookByPublisher(req.params.publisher));
+    res.json(200,textbooks.getTextBookByPublisher(req.params.publisher));
 });
 
 //if the route is any other the return will be 404 not found error
