@@ -15,6 +15,7 @@ var books = {"textbooks" : [
 
 //functions that returns all of textbooks objects
 exports.getAllTextBooks = function() {
+    console.log('textbooks found:' + JSON.stringify(books.textbooks));
     return {"textbooks" : books.textbooks};
 };
 
@@ -23,9 +24,11 @@ exports.getTextBookByISBN = function(isbn) {
     var i;
     for (i = 0; i < books.textbooks.length ; i++){
         if (books.textbooks[i].ISBN === isbn) {
+            console.log('textbook found with isbn' + isbn + ': ' + JSON.stringify(books.textbooks[i]));
             return {"textbooks" : books.textbooks[i]};
         }
     }
+    console.log('textbook not found');
     return {};
 };
 
@@ -38,5 +41,6 @@ exports.getTextBookByPublisher = function(publisher) {
             booksObj.textbooks.push(books.textbooks[i]);
         }
     }
+    console.log('textbooks found with publisher' + publisher + ': ' + JSON.stringify(booksObj.textbooks));
     return booksObj;
 };
