@@ -25,7 +25,7 @@ exports.getTextBookByISBN = function(isbn) {
     for (i = 0; i < books.textbooks.length ; i++){
         if (books.textbooks[i].ISBN === isbn) {
             console.log('textbook found with isbn' + isbn + ': ' + JSON.stringify(books.textbooks[i]));
-            return {"textbooks" : books.textbooks[i]};
+            return {"textbooks" : [books.textbooks[i]]};
         }
     }
     console.log('textbook not found');
